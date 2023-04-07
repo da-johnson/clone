@@ -1,6 +1,5 @@
 name: Commit date to master
 on: [push]
-  workflow_dispatch:
 jobs:
   date:
     runs-on: ubuntu-latest
