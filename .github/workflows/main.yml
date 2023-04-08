@@ -1,4 +1,4 @@
-name: Commit date to master
+name: Write index.html from box.xlsm using excel-html.py
 on: [push]
 jobs:
   date:
