@@ -110,9 +110,6 @@ background-color: #A9A9A9; /* Set the background color for empty category */
   /* Set line-height */
   line-height: 13px;
   min-height: 50px;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .button:hover {
@@ -149,6 +146,11 @@ background-color: #A9A9A9; /* Set the background color for empty category */
 @media screen and (max-width: 988px) {
   .column {
     width: 100%;
+  }
+  .button {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
