@@ -3,7 +3,7 @@
 
 # In[1]:
 
-
+import glob
 import pandas as pd
 
 import sys
@@ -13,8 +13,9 @@ import re
 
 # In[2]:
 
-
-data = pd.read_excel("box.xlsm", nrows = 81)
+# use glob to find all .xlsm files in the directory
+xlsm_file = glob.glob('*.xlsm')
+data = pd.read_excel(xlsm_file[0], nrows = 81)
 data.columns = ['position', 'label', 'selection', 'date', 'geneious', 'addgene', 'genbank', 'benchling', 'verified', 'sequence', 'tm', 'ident', 'comments', 'project']
 
 # # Define a regular expression to match any character that is not allowed in a file name, excluding underscores
@@ -383,7 +384,7 @@ with open("index.html", "w") as f:
         if pd.isna(row['geneious']):
             geneious = ''
         else:
-            geneious = '<p><a href=\"{}target="_blank"\">Geneious Link</a></p>'.format(row['geneious'])
+            geneious = '<p><a href=\"{}"\target="_blank">Geneious Link</a></p>'.format(row['geneious'])
 
         if pd.isna(row['benchling']):
             benchling = ''
@@ -456,6 +457,4 @@ sys.stdout = sys.__stdout__
 
 
 # In[ ]:
-
-
 
